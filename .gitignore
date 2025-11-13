@@ -1,0 +1,12 @@
+code .gitignore
+```
+
+Add this:
+```
+node_modules/
+.env
+.env.local
+*.log
+.gradle/
+dist/
+build/
