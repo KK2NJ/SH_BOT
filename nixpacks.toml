@@ -5,4 +5,4 @@ aptPkgs = ['wget', 'ca-certificates', 'fonts-liberation', 'libasound2', 'libatk-
 cmds = ['pip install -r requirements.txt']
 
 [start]
-cmd = 'playwright install chromium && python main.py'
+cmd = 'sh -c "echo Installing Playwright browsers... && python -m playwright install chromium --with-deps && echo Browsers installed! && python main.py"'
