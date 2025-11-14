@@ -1,0 +1,11 @@
+[phases.setup]
+aptPkgs = ['chromium']  # Install Chromium from Linux package manager
+
+[phases.install]
+cmds = [
+  'pip install -r requirements.txt',  # Install Python packages
+  'playwright install chromium --with-deps'  # Install Playwright browsers
+]
+
+[start]
+cmd = 'python main.py'  # How to start your app
