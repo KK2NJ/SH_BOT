@@ -1,7 +1,7 @@
 import nextcord
 from nextcord.ext import commands
 import requests
-from bs4 import BeautifulSoup
+#from bs4 import BeautifulSoup
 
 import requests
 from playwright.sync_api import sync_playwright
