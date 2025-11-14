@@ -4,6 +4,7 @@ aptPkgs = ['wget', 'ca-certificates', 'fonts-liberation', 'libasound2', 'libatk-
 [phases.install]
 cmds = [
   'pip install -r requirements.txt',
+  'playwright install',
   'playwright install-deps chromium',
   'playwright install chromium'
 ]
