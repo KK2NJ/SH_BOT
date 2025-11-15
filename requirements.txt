@@ -3,3 +3,4 @@ python-dotenv
 requests
 playwright
 selenium 
+pyvirtualdisplay
