@@ -8,7 +8,7 @@ async def main():
 
     page = await browser.get('https://www.scrapingcourse.com/cloudflare-challenge')
 
-    await asyncio.sleep(180)
+    await asyncio.sleep(30)
 
     origin = await page.evaluate("window.location.origin")
 
@@ -21,9 +21,9 @@ async def main():
             "domain" : c.domain,
             "path" : c.path,
             "expires" : c.expires if c.expires is not None else -1.0,
-            "httpOnly" : c.httpOnly,
+            "httpOnly" : c.http_only,
             "secure" : c.secure,
-            "sameSite" : c.sameSite.name.capitalize() if c.sameSite else "Lax"
+            "sameSite" : c.same_site.name.capitalize() if c.same_site else "Lax"
         }
         for c in cookies
     ]
@@ -47,6 +47,7 @@ async def main():
     with open("auth.json", "w") as f:
         json.dump(data, f, indent=2)
     
+    print("cookies and local storage saved to auth.json wherever tf it is")
 
     await asyncio.sleep(5)
 
