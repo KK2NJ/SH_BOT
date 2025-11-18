@@ -51,7 +51,7 @@ async def main():
 
     await asyncio.sleep(5)
 
-    await browser.stop()
+    browser.stop()
 
 
 if __name__ == '__main__':
