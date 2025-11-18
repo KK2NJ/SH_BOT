@@ -4,7 +4,7 @@ import asyncio
 
 async def main():
 
-    browser = await uc.launch(headless=False)
+    browser = await uc.start(headless=False)
 
     page = await browser.get('https://www.scrapingcourse.com/cloudflare-challenge')
 
@@ -28,7 +28,7 @@ async def main():
         for c in cookies
     ]
 
-    local_storage_items = await page.get_logcal_storage()
+    local_storage_items = await page.get_local_storage()
     local_storage = [
         {"name": key, "value": value}
         for key, value in local_storage_items.items()
@@ -50,7 +50,7 @@ async def main():
 
     await asyncio.sleep(5)
 
-    browser.stop()
+    await browser.stop()
 
 
 if __name__ == '__main__':
